@@ -6,6 +6,7 @@ export class LoginPage {
     readonly getLoginField: Locator;
     readonly getLoginPassword: Locator;
     readonly getLoginUserBtn: Locator;
+    readonly getLoginErrorMSG : Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +14,7 @@ export class LoginPage {
         this.getLoginField = page.locator("css=#user-name");
         this.getLoginPassword = page.locator("css=#password");
         this.getLoginUserBtn = page.locator("css=#login-button");
+        this.getLoginErrorMSG = page.locator("xpath=//*[@data-test='error']")
     }
 
     async goto(){
@@ -24,6 +26,6 @@ export class LoginPage {
         await this.getLoginField.pressSequentially(userLogin);
         await this.getLoginPassword.pressSequentially(userPassword);
         await this.getLoginUserBtn.click();
-
     }
+
 }
