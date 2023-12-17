@@ -2,14 +2,12 @@ import { expect, test } from "@playwright/test";
 import { LoginPage } from "../../pageObjects/loginPage.js";
 import { MainPage } from "../../pageObjects/mainPage.js";
 
-let userLoginName = "standard_user";
-let userPassword = "secret_sauce";
-let userLoginLockedName = "locked_out_user";
 
 test('login to platform test', async ({ page }) => {
     let loginPage = new LoginPage(page);
+    let credentials = new UserCredentials();
     await loginPage.goto();
-    await loginPage.loginUserToPlatform(userLoginName, userPassword);
+    await loginPage.loginUserToPlatform(credentials.userLoginName, credentials.userPassword);
     let mainPage = new MainPage(page);
     mainPage.waitMainPage
 })
