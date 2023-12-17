@@ -14,7 +14,7 @@ export class LoginPage {
         this.getLoginField = page.locator("css=#user-name");
         this.getLoginPassword = page.locator("css=#password");
         this.getLoginUserBtn = page.locator("css=#login-button");
-        this.getLoginErrorMSG = page.locator("xpath=//*[@data-test='error']")
+        this.getLoginErrorMSG = page.locator("xpath=//*[contains(text(), 'Epic')]']")
     }
 
     async goto(){
