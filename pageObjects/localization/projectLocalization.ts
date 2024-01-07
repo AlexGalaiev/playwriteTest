@@ -1,6 +1,6 @@
 
 //Trading Card
-class ProjectLocalization {
+export class ProjectLocalization {
     public tradingCardName: string;
     public tradingCardPrice: string;
 
